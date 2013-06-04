@@ -2969,6 +2969,7 @@ Source: &lt;a href="http://www.vishay.com/docs/83673/sfh618.pdf"&gt; Data sheet 
 <part name="TEMP" library="SparkFun-Connectors" deviceset="M03" device="POLAR"/>
 <part name="SUPPLY6" library="SparkFun-Aesthetics" deviceset="5V" device=""/>
 <part name="GND6" library="SparkFun-Aesthetics" deviceset="GND2" device=""/>
+<part name="R15" library="SparkFun-Resistors" deviceset="RESISTOR" device="PTH-1/4W" value="550"/>
 </parts>
 <sheets>
 <sheet>
@@ -3028,6 +3029,7 @@ Source: &lt;a href="http://www.vishay.com/docs/83673/sfh618.pdf"&gt; Data sheet 
 <instance part="TEMP" gate="G$1" x="17.78" y="185.42"/>
 <instance part="SUPPLY6" gate="G$1" x="40.64" y="187.96" rot="R270"/>
 <instance part="GND6" gate="G$1" x="30.48" y="182.88"/>
+<instance part="R15" gate="G$1" x="48.26" y="106.68" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -3336,10 +3338,9 @@ Source: &lt;a href="http://www.vishay.com/docs/83673/sfh618.pdf"&gt; Data sheet 
 </net>
 <net name="N$25" class="0">
 <segment>
-<pinref part="OK2" gate="G$1" pin="A"/>
 <pinref part="U1" gate="G$1" pin="*D5"/>
-<wire x1="50.8" y1="93.98" x2="48.26" y2="93.98" width="0.1524" layer="91"/>
-<wire x1="48.26" y1="93.98" x2="48.26" y2="144.78" width="0.1524" layer="91"/>
+<pinref part="R15" gate="G$1" pin="2"/>
+<wire x1="48.26" y1="111.76" x2="48.26" y2="144.78" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$27" class="0">
@@ -3376,6 +3377,14 @@ Source: &lt;a href="http://www.vishay.com/docs/83673/sfh618.pdf"&gt; Data sheet 
 <pinref part="R14" gate="G$1" pin="2"/>
 <wire x1="73.66" y1="88.9" x2="73.66" y2="83.82" width="0.1524" layer="91"/>
 <wire x1="73.66" y1="83.82" x2="73.66" y2="81.28" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$32" class="0">
+<segment>
+<pinref part="OK2" gate="G$1" pin="A"/>
+<wire x1="50.8" y1="93.98" x2="48.26" y2="93.98" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="93.98" x2="48.26" y2="101.6" width="0.1524" layer="91"/>
+<pinref part="R15" gate="G$1" pin="1"/>
 </segment>
 </net>
 </nets>
