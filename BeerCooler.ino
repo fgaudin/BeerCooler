@@ -7,12 +7,12 @@
 #define MIN_TEMPERATURE 60
 #define MAX_TEMPERATURE 79
 
-OneWire tempSensor(2);  // on pin 10 (a 4.7K resistor is necessary)
-PushButton buttonHigh(3);
-PushButton buttonLow(4);
+OneWire tempSensor(3);
+PushButton buttonHigh(4);
+PushButton buttonLow(5);
 Settings settings(MIN_TEMPERATURE, MAX_TEMPERATURE);
-Led7Seg leds(6, 7, 8, 9, 10, 11, 12, 13);
-int ledPin = 5;
+Led7Seg leds(11, 10, 8, 7, 6, 12, 13, 9);
+int ledPin = 2;
 
 // settings button
 #define MODE_DISPLAY 0
