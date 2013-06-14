@@ -54,10 +54,18 @@ void Settings::update(){
 }
 
 int Settings::compare(float value){
-  if (value < _lowLimit){
-    return -1;
-  } else if (value > _highLimit) {
-    return 1;
+  if (_lowLimit < _highLimit){
+    if (value < _lowLimit){
+      return -1;
+    } else if (value > _highLimit) {
+      return 1;
+    }
+  } else {
+    if (value > _lowLimit){
+      return -1;
+    } else if (value < _highLimit) {
+      return 1;
+    }
   }
   return 0;
 }

@@ -12,7 +12,7 @@ PushButton buttonHigh(4);
 PushButton buttonLow(5);
 Settings settings(MIN_TEMPERATURE, MAX_TEMPERATURE);
 Led7Seg leds(11, 10, 8, 7, 6, 12, 13, 9);
-int ledPin = 2;
+int fanPin = 2;
 
 // settings button
 #define MODE_DISPLAY 0
@@ -21,7 +21,7 @@ int ledPin = 2;
 
 const int delayBeforeResetMode = 4000;
 
-int mode = 0;
+int mode = MODE_DISPLAY;
 
 // temperature
 const unsigned long delayBetweenTempCheck = 2000;
@@ -32,7 +32,7 @@ unsigned long lastTempCheck = 0;
 void setup(void) {
   Serial.begin(9600);
   configureTemperaturePrecision();
-  pinMode(ledPin, OUTPUT);
+  pinMode(fanPin, OUTPUT);
 }
 
 void loop(void) {
@@ -113,10 +113,10 @@ void checkTemperature(){
       
       switch(settings.compare(temperature)) {
         case 1:
-          digitalWrite(ledPin, HIGH);
+          digitalWrite(fanPin, HIGH);
           break;
         case -1:
-          digitalWrite(ledPin, LOW);
+          digitalWrite(fanPin, LOW);
           break;
       }
     }
