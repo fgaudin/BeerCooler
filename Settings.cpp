@@ -71,15 +71,20 @@ int Settings::compare(float value){
 }
 
 void Settings::_load(){
+  boolean shouldSave = false;
   _lowLimit = int(EEPROM.read(0));
   if (_lowLimit == 255) {
     _lowLimit = _minLimit;
+    shouldSave = true;
   }
   _highLimit = int(EEPROM.read(1));
   if (_highLimit == 255) {
     _highLimit = _maxLimit;
+    shouldSave = true;
   }
-  _save();
+  if (shouldSave) {
+    _save();
+  }
 }
 
 void Settings::_save(){
